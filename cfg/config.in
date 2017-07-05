@@ -230,10 +230,6 @@ set sv_csqc_physic 0
 set sv_world_scale 1
 set sv_jumppads_target_adjust_height 0
 
-set g_runes 0
-set g_runematch_carried_runes_max 3
-set g_runematch_curses 1
-
 set gameversion_matter 0
 set g_start_weapon_supershotgun 0
 

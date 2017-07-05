@@ -2005,7 +2005,7 @@ float ExponentialFalloff(float mindist, float maxdist, float halflifedist, float
 }
 
 /**
- * Resets the state of all clients, items, flags, runes, keys, weapons, waypoints, ... of the map.
+ * Resets the state of all clients, items, flags, keys, weapons, waypoints, ... of the map.
  * Sets the 'warmup' global variable.
  */
 void reset_map(float dorespawn)

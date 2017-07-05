@@ -234,7 +234,6 @@ void cvar_changes_init()
 		BADCVAR("g_onslaught");
 		BADCVAR("g_race");
 		BADCVAR("g_cts");
-		BADCVAR("g_runematch");
 		BADCVAR("g_tdm");
 		BADCVAR("g_nexball");
 		BADCVAR("teamplay");
@@ -532,7 +531,6 @@ void readlevelcvars(void)
 	CACHE_CVAR(g_jetpack);
 	CACHE_CVAR(g_minstagib);
 	CACHE_CVAR(g_norecoil);
-	CACHE_CVAR(g_runes);
 	CACHE_CVAR(sv_autotaunt);
 	CACHE_CVAR(sv_taunt);
 	CACHE_CVAR(g_nadgets);
@@ -571,7 +569,6 @@ void readlevelcvars(void)
 	CACHE_CVAR(g_telefrags);
 	Items_Init();
 	Player_Init();
-	runes_init();
 	GameMenu_Init();
 	WalkieTalkie_Init();
 	Akimbo_Init();

@@ -16,7 +16,7 @@ CLASS(NexuizMapInfoDialog) EXTENDS(NexuizDialog)
 
 	ATTRIB(NexuizMapInfoDialog, typeDeathmatchLabel, entity, NULL)
 	ATTRIB(NexuizMapInfoDialog, typeTDMLabel, entity, NULL)
-	ATTRIB(NexuizMapInfoDialog, typeRuneLabel, entity, NULL)
+	ATTRIB(NexuizMapInfoDialog, typeSurviveLabel, entity, NULL)
 	ATTRIB(NexuizMapInfoDialog, typeDominationLabel, entity, NULL)
 	ATTRIB(NexuizMapInfoDialog, typeClanArenaLabel, entity, NULL)
 	ATTRIB(NexuizMapInfoDialog, typeKeyHuntLabel, entity, NULL)
@@ -72,7 +72,7 @@ void loadMapInfoNexuizMapInfoDialog(entity me, float i, entity mlb)
 	me.typeTDMLabel.disabled = !(MapInfo_Map_supportedGametypes & MAPINFO_TYPE_TEAM_DEATHMATCH);
 	me.typeDominationLabel.disabled = !(MapInfo_Map_supportedGametypes & MAPINFO_TYPE_DOMINATION);
 	me.typeClanArenaLabel.disabled = !(MapInfo_Map_supportedGametypes & MAPINFO_TYPE_CLANARENA);
-	me.typeRuneLabel.disabled = !(MapInfo_Map_supportedGametypes & MAPINFO_TYPE_RUNEMATCH);
+	me.typeSurviveLabel.disabled = !(MapInfo_Map_supportedGametypes & MAPINFO_TYPE_SURVIVE);
 	me.typeKeyHuntLabel.disabled = !(MapInfo_Map_supportedGametypes & MAPINFO_TYPE_KEYHUNT);
 	me.typeCTFLabel.disabled = !(MapInfo_Map_supportedGametypes & MAPINFO_TYPE_CTF);
 	me.typeAssaultLabel.disabled = !(MapInfo_Map_supportedGametypes & MAPINFO_TYPE_ASSAULT);
@@ -118,8 +118,8 @@ void fillNexuizMapInfoDialog(entity me)
 			me.typeDeathmatchLabel = e;
 		me.TD(me, 1, wgt, e = makeNexuizTextLabel(0, "TDM"));
 			me.typeTDMLabel = e;
-		me.TD(me, 1, wgt, e = makeNexuizTextLabel(0, "Rune"));
-			me.typeRuneLabel = e;
+		me.TD(me, 1, wgt, e = makeNexuizTextLabel(0, "Survive"));
+			me.typeSurviveLabel = e;
 	me.TR(me);
 		me.TDempty(me, 0.2);
 		me.TD(me, 1, wgt, e = makeNexuizTextLabel(0, "Domination"));

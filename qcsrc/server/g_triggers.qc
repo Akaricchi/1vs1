@@ -425,11 +425,6 @@ void trigger_hurt_touch()
 				EXACTTRIGGER_TOUCH;
 				other.pain_finished = min(other.pain_finished, time + 2);
 			}
-			else if (other.classname == "rune")			// reset runes
-			{
-				EXACTTRIGGER_TOUCH;
-				other.nextthink = min(other.nextthink, time + 1);
-			}
 		}
 	}
 
@@ -492,7 +487,7 @@ void trigger_heal_touch()
 		{
 			EXACTTRIGGER_TOUCH;
 			other.triggerhealtime = time + 1;
-			
+
 			if (other.health < self.max_health)
 			{
 				other.health = min(other.health + self.health, self.max_health);
@@ -680,7 +675,7 @@ void spawnfunc_func_pointparticles()
 		setmodel(self, self.model);
 	if(self.noise != "")
 		precache_sound (self.noise);
-	
+
 	if(!self.bgmscriptsustain)
 		self.bgmscriptsustain = 1;
 	else if(self.bgmscriptsustain < 0)
@@ -1560,7 +1555,7 @@ void spawnfunc_target_voicescript()
 	//          added after this message
 	// wait: average time between messages
 	// delay: initial delay before the first message
-	
+
 	float i, n;
 	self.use = target_voicescript_use;
 
@@ -1676,7 +1671,7 @@ string trigger_magicear_processmessage(entity ear, entity source, float teamsay,
 			if(ear.spawnflags & 8)
 				return msgin;
 	}
-	
+
 	matchstart = -1;
 	l = strlen(ear.message);
 

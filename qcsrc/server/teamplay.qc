@@ -74,7 +74,6 @@ string TeamNoName(float t)
 void dom_init();
 void ctf_init();
 void onslaught_init();
-void runematch_init();
 void tdm_init();
 void nb_init();
 void entcs_init();
@@ -97,7 +96,6 @@ void WriteGameCvars()
 	cvar_set("g_tdm", ftos(g_tdm));
 	cvar_set("g_domination", ftos(g_domination));
 	cvar_set("g_ctf", ftos(g_ctf));
-	cvar_set("g_runematch", ftos(g_runematch));
 	cvar_set("g_conquest", ftos(g_conquest));
 	cvar_set("g_keyhunt", ftos(g_keyhunt));
 	cvar_set("g_assault", ftos(g_assault));
@@ -124,7 +122,6 @@ void ReadGameCvars()
 		found += (g_tdm = (!found && (prev != GAME_TEAM_DEATHMATCH) && cvar("g_tdm")));
 		found += (g_domination = (!found && (prev != GAME_DOMINATION) && cvar("g_domination")));
 		found += (g_ctf = (!found && (prev != GAME_CTF) && cvar("g_ctf")));
-		found += (g_runematch = (!found && (prev != GAME_RUNEMATCH) && cvar("g_runematch")));
 		found += (g_conquest = (!found && (prev != GAME_CONQUEST) && cvar("g_conquest")));
 		found += (g_keyhunt = (!found && (prev != GAME_KEYHUNT) && cvar("g_keyhunt")));
 		found += (g_assault = (!found && (prev != GAME_ASSAULT) && cvar("g_assault")));
@@ -267,15 +264,6 @@ void InitGameplayMode()
 		game = GAME_CTF;
 		ActivateTeamplay();
 		ctf_init();
-	}
-
-	if(g_runematch)
-	{
-		game = GAME_RUNEMATCH;
-		if(cvar("deathmatch_force_teamplay"))
-			ActivateTeamplay();
-
-		runematch_init();
 	}
 
 	if(g_keyhunt)
